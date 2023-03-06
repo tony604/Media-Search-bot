@@ -1,32 +1,25 @@
-import re
-from os import environ
-
-id_pattern = re.compile(r'^.\d+$')
-
 # Bot information
-SESSION = environ.get('SESSION', 'Media_search')
-USER_SESSION = environ.get('USER_SESSION', 'User_Bot')
-API_ID = int(environ['API_ID'])
-API_HASH = environ['API_HASH']
-BOT_TOKEN = environ['BOT_TOKEN']
-USERBOT_STRING_SESSION = environ.get('USERBOT_STRING_SESSION')
+SESSION = 'Media_search'
+USER_SESSION = 'User_Bot'
+API_ID = 7893250
+API_HASH = environ['e2510243b29d570a8bc9dac5a0e717ce']
+BOT_TOKEN = environ['6154328624:AAFvQpgFKgUSGeUj5R4pkzSF7Pw_4-uV-4U']
+USERBOT_STRING_SESSION = ('')
 
 # Bot settings
-CACHE_TIME = int(environ.get('CACHE_TIME', 300))
-USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
+CACHE_TIME = 300
+USE_CAPTION_FILTER = False
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS'].split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ['CHANNELS'].split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
-AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL')
-AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else auth_channel
+ADMINS = [1213559066,1955051682]
+CHANNELS = [-1001669864439]
+AUTH_USERS = []
+AUTH_CHANNEL = None
 
 # MongoDB information
-DATABASE_URI = environ['DATABASE_URI']
-DATABASE_NAME = environ['DATABASE_NAME']
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+DATABASE_URI = ['mongodb+srv://studywarriornine:<password>@cluster0.qjxcfpe.mongodb.net/?retryWrites=true&w=majority']
+DATABASE_NAME = ['Telegram']
+COLLECTION_NAME = 'Telegram_files'
 
 # Messages
 default_start_msg = """
@@ -35,6 +28,5 @@ default_start_msg = """
 Here you can search files in inline mode. Just press following buttons and start searching.
 """
 
-START_MSG = environ.get('START_MSG', default_start_msg)
-SHARE_BUTTON_TEXT = 'Checkout {username} for searching files'
-INVITE_MSG = environ.get('INVITE_MSG', 'Please join @.... to use this bot')
+SHARE_BUTTON_TEXT = 'Checkout {Entertainment} for searching files'
+INVITE_MSG = ('INVITE_MSG', 'Please join @Enterainment to use this bot')
